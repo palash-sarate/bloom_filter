@@ -49,6 +49,7 @@ func testBloomFilter(size int, numHashers int, dataset []string) TestResult {
         if i < len(dataset)/2 && !contains {
             falseNegatives++
         } else if i >= len(dataset)/2 && contains {
+            // when the item is not in the Bloom filter but it returns true
             falsePositives++
         }
     }
@@ -100,8 +101,8 @@ func TestBloomFilter(t *testing.T) {
     results := []TestResult{}
 
     // Test different configurations
-    for _, size := range []int{1000, 2000, 5000} {
-        for _, numHashers := range []int{3, 5, 7} {
+    for _, size := range []int{1000, 2000, 5000, 10000} {
+        for _, numHashers := range []int{1, 3, 5, 7} {
             result := testBloomFilter(size, numHashers, dataset)
             results = append(results, result)
         }

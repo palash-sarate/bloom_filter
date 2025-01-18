@@ -12,7 +12,6 @@ type BloomFilter struct {
 	size       int
 	bitArray   []bool
 	numHashers int
-	hasher     hash.Hash32
 	hashers    []hash.Hash32
 }
 
@@ -32,12 +31,12 @@ func NewBloomFilter(size int, numHashers int, hashers []hash.Hash32) *BloomFilte
 
 	if numHashers == 0 && len(hashers) != 0 {
 		numHashers = len(hashers)
+		println("Correcting numHashers to ", numHashers)
 	}
 
 	return &BloomFilter{
 		size:       size,
 		bitArray:   make([]bool, size),
-		hasher:     murmur3.New32(),
 		numHashers: numHashers,
 		hashers:    hashers,
 	}

@@ -1,0 +1,87 @@
+=== RUN   TestBloomFilter
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bloom Filter Test Report</title>
+</head>
+<body>
+    <h1>Bloom Filter Test Report</h1>
+    <table border="1">
+        <tr>
+            <th>Bit Array Size</th>
+            <th>Number of Hash Functions</th>
+            <th>False Positives</th>
+            <th>False Negatives</th>
+        </tr>
+        
+        <tr>
+            <td>1000</td>
+            <td>3</td>
+            <td>5000</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>1000</td>
+            <td>5</td>
+            <td>5000</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>1000</td>
+            <td>7</td>
+            <td>5000</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>2000</td>
+            <td>3</td>
+            <td>4996</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>2000</td>
+            <td>5</td>
+            <td>5000</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>2000</td>
+            <td>7</td>
+            <td>5000</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>5000</td>
+            <td>3</td>
+            <td>4245</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>5000</td>
+            <td>5</td>
+            <td>4712</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <td>5000</td>
+            <td>7</td>
+            <td>4933</td>
+            <td>0</td>
+        </tr>
+        
+    </table>
+</body>
+</html>
+
+--- PASS: TestBloomFilter (0.07s)
+PASS
+ok  	bloom_filter	0.754s
